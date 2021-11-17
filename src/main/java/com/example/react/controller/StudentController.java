@@ -27,20 +27,24 @@ public class StudentController {
 
 @Autowired
 	private StudentRepository studentRepo;
+    
+
 
 	//get all students
 	
 	@GetMapping("/allstudents")
 	public List<Student> getAllStudents()
 	{
+		
 		return studentRepo.findAll();
 	}
 	
 
 	@PostMapping("/addstudent")
-    public Student newStudent(@RequestBody Student s)
+    public Student newStudents(@RequestBody Student st)
     {
-		return studentRepo.save(s);
+		
+		return studentRepo.save(st);
     }
 	
 	
@@ -48,7 +52,7 @@ public class StudentController {
 	public ResponseEntity<Student> getStudentById(@PathVariable int id)
 	{
 		Student s= studentRepo.findById(id).orElseThrow(() ->  new ResourceNotFoundException("Student not found"));
-		return ResponseEntity.ok(s);                     
+		return ResponseEntity.ok(s);                 
 	}
 	
 	@GetMapping("/students/{name}")
@@ -64,6 +68,7 @@ public class StudentController {
 		
 		return studentRepo.findByName(name);
 	}
+	
 	
 	
 	@PutMapping("/student/{id}")

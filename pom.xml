@@ -32,11 +32,21 @@
 			<scope>runtime</scope>
 			<optional>true</optional>
 		</dependency>
+		
+		<dependency>
+			<groupId>com.github.ulisesbocchio</groupId>
+   			<artifactId>jasypt-spring-boot-starter</artifactId>
+   			<version>3.0.4</version>
+		</dependency>
+		
+		
+		
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -50,6 +60,12 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			
+			<plugin>
+     			 <groupId>com.github.ulisesbocchio</groupId>
+     			 <artifactId>jasypt-maven-plugin</artifactId>
+     			 <version>3.0.4</version>
+   			 </plugin>
 		</plugins>
 	</build>
 
